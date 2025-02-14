@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+:root {
+  --primaryTextColor: #232e35; /* Untuk title atau judul */
+  --secondaryTextColor: #656d72; /* Untuk text biasa seperti paragraph contohnya */
+
+  --borderColor: #5f74ff;
+  --lineColor: #d9d9d9; /* untuk line di pre-title */
+
+  --primaryBackgroundColor: #fff;
+  --secondaryBackgroundColor: #fbfbfb;
+  --thirdBackgroundColor: #f5f3fe;
+
+  --primaryIconColor: #7e74f1;
+  --primaryIconColorHover: #5d51e8;
+  --secondaryIconColor: #3768a7;
+
+  --sectionPadding: 6rem 0;
+
+  --itemBorderRadius: 0.7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: lightblue;
+  color: rgb(6, 19, 134);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--primaryTextColor);
+}
+a {
+  text-decoration: none;
+}
+
+/* Titles */
+.section-title {
+  margin: 1rem 0 4rem;
+  font-size: 2rem;
+  text-justify: ;
+}
+
+.pre-title {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: rgb(86, 86, 86);
+  position: relative;
+  padding-left: 40px;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.pre-title::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: rgb(86, 86, 86);
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 50%;
+}
+
+/* Layouts */
+.grid-3 {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; use this first, use code below when its time for explaining responsive design part */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .main-container {
+      width: 90%;
+    }
+  }
+
+  /* --- Logo and Navigation Menu --- */
+
+  /* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+  
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 1rem 0;
+}
+/* Navigation Menu */
+nav ul li {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li a {
+    color: var(--primaryTextColor);
+  }
+
+/* Buttons */
+.btn {
+    padding: 1rem 1.5rem;
+    background: lightblue;
+    border: 1.5px solid rgb(123, 172, 189);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+  
+  .btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 3px 5px;
+}
+
+/* Burger */
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    margin: 7px;
+    transition: all 0.8s;
+    z-index: 99;
+  }
+  
+  .burger {
+    display: none;
+    z-index: 99;
+    position: fixed;
+    top: 33px;
+    right: 35px;
+  }
+
+  /* Hero Section */
+#hero {
+  height: 720px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* We're not going to use automatic template columns, because we need to know when the columns is go below. So we can exchange the order of the element */
+  align-items: center;
+}
+
+.hero-right img {
+    width: 70%;
+  }
+  
+  .hero-right {
+    display: flex;
+    justify-content: center;
+  }
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+}
+
+.sub-hero-name {
+  color: var(--primaryIconColor) !important;
+}
+
+.sub-hero-name2 {
+  color: rgb(70, 81, 206) !important;
+}
+
+/* Services Section */
+#services {
+  background-color: rgb(222, 237, 243);
+  padding: var(--sectionPadding);
+}
+
+.services .pre-title {
+  margin: 0 auto;
+}
+
+.services-title {
+  text-align: center;
+  text-shadow: 0 0 3px rgba(44, 68, 188, 0.783);
+  color: #7c8080;
+}
+
+.services .grid-3 {
+  padding: 2rem 2rem;
+}
+
+.service {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: lightblue;
+  border-radius: var(--itemBorderRadius);
+  margin: 1.3rem 0.7rem;
+  transition: 0.3s ease-in-out;
+}
+
+.service:hover {
+  box-shadow: rgba(0, 0, 0, 0.299) 0px 0px 25px;
+  transform: scale(1.07);
+}
+
+.service h4 {
+  margin: 1.5rem 0;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.service-icon {
+  background: rgb(222, 237, 243);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.service-icon svg {
+  fill: var(--primaryIconColor);
+}
+
+/* Portfolios */
+#portfolios {
+  padding: var(--sectionPadding);
+}
+
+.portfolio {
+  border-radius: var(--itemBorderRadius);
+  overflow: hidden; /* supaya gambar yang diatas itu dia ngikut border radiusnya, karena yang dikasih border radius disini adalah div portfolio ini */
+  border: 1px solid var(--borderColor);
+  transition: 0.3s ease-in-out;
+  margin: 0.8rem 0.2rem;
+}
+
+
+
+.portfolio:hover {
+  box-shadow: rgba(0, 0, 0, 0.299) 0px 0px 35px;
+  transform: scale(1.07);
+}
+
+.portfolio-cover {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+}
+
+.portfolio-cover img {
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+.portfolio-cover video {
+  width: fit-content;
+  height: auto;
+  object-fit: cover;
+}
+
+.portfolio iframe {
+  width: fit-content;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-info {
+  padding: 1.5rem;
+}
+
+/* .portfolio-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 1.5px solid var(--borderColor);
+  padding: 0.4rem 1rem;
+  color: var(--secondaryTextColor);
+  margin: 2rem;
+} */
+
+.portfolio h4 {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.portfolio-title a svg:hover {
+  transform: scale(1.4);  
+}
+
+.portfolio-title a svg {
+  transition: 0.2s ease-in-out;
+}
+
+.portfolio-tags {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.portfolio-tags div {
+  font-size: 0.9rem;
+  border: 1px solid var(--borderColor);
+  padding: 0.4rem 1rem;
+  color: var(--secondaryTextColor);
+}
+
+/* Skills and Education */
+#skills {
+  padding: var(--sectionPadding);
+  background: rgb(222, 237, 243);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem
+}
+
+.education {
+  display: flex;
+  gap: 2rem;
+}
+
+.education .line {
+  padding: 0 0.7rem;
+}
+
+.education .line div{
+  width: 3px;
+  height: 100%;
+  background-color: rgb(60, 78, 141);
+  position: relative;
+}
+
+.education-info p{
+  margin: .6rem 0 1.2rem;
+}
+.education-years {
+  margin-bottom: 3rem;
+}
+
+/* The dot on the line */
+.education .line div:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: rgb(60, 78, 141);
+  border-radius: 50%;
+  position: absolute;
+  left: -9px;
+}
+
+.education-info {
+  transition: 0.3s ease-in-out;
+}
+
+.education-info:hover{
+  transform: scale(1.17);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5rem;
+}
+
+.skills-right p {
+  line-height: 2rem;
+}
+
+.skills-right ul {
+  line-height: 2rem;
+  padding: 0 1rem;
+}
+
+#contact {
+  padding: var(--sectionPadding);
+}
+
+.contact {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.contact-form div {
+  margin-bottom: 1.4rem;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  font-family: "Roboto", sans-serif;
+  background: lightblue;
+  border: 1px solid var(--borderColor);
+  border-radius: 3px;
+  resize: none;
+  transition: 0.3s ease-in-out;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: lightblue;
+  font-family: "Roboto", sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 1px solid #4c5df9;
+  box-shadow: rgba(3, 0, 56, 0.258) 0px 0px 20px;
+  transform: scale(1.009);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  background-color: var(--primaryIconColor);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: var(--primaryIconColorHover);
+  box-shadow: rgba(3, 0, 56, 0.781) 0px 7px 30px;
+  transform: scale(1.05);
+}
+
+.contact-item-icon {
+  background: rgb(222, 237, 243);
+  padding: 0.3rem 0.5rem;
+  width: 53px;
+  height: 53px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+
+.contact-item-icon:hover {
+  box-shadow: rgba(3, 0, 56, 0.781) 0px 7px 30px;
+  transform: scale(1.2);
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-item-detail h4 {
+  margin: 0.6rem;
+}
+
+/* footer section  */
+footer {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.footer-icons a svg {
+  margin: 0 .5rem;
+  transition: 0.3s ease-in-out;
+}
+
+.footer-icons a svg:hover {
+  transform: scale(1.4);
+}
+
+.footer-copyright {
+  padding: 1rem;
+  font-family: "Roboto", sans-serif;
+}
