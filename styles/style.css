@@ -48,9 +48,9 @@ a {
 
 /* Titles */
 .section-title {
-  margin: 1rem 0 4rem;
+  margin: 1rem auto 4rem;
   font-size: 2rem;
-  text-justify: ;
+  text-align: center;
 }
 
 .pre-title {
@@ -62,6 +62,8 @@ a {
   width: fit-content;
   font-weight: 400;
   font-size: 0.9rem;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .pre-title::before {
@@ -73,6 +75,7 @@ a {
   display: block;
   left: 0;
   top: 50%;
+  text-align: center;
 }
 
 /* Layouts */
@@ -201,8 +204,6 @@ nav ul li {
 
 .services-title {
   text-align: center;
-  text-shadow: 0 0 3px rgba(44, 68, 188, 0.783);
-  color: #7c8080;
 }
 
 .services .grid-3 {
@@ -369,15 +370,25 @@ nav ul li {
   background: rgb(60, 78, 141);
   border-radius: 50%;
   position: absolute;
+  top: 50%;
   left: -9px;
 }
 
 .education-info {
   transition: 0.3s ease-in-out;
+  width: 78%;
+  margin: 2rem 0;
+}
+
+.education-info img {
+  width: 100%;
+  height: auto;
+  object-fit: fill;
 }
 
 .education-info:hover{
-  transform: scale(1.17);
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.299) 0px 0px 35px;
 }
 
 .skills-list {
@@ -386,6 +397,10 @@ nav ul li {
   margin-top: 1.5rem;
 }
 
+
+.skills-right {
+ margin: auto 0;
+}
 .skills-right p {
   line-height: 2rem;
 }
@@ -461,6 +476,10 @@ nav ul li {
   align-items: center;
   justify-content: center;
   transition: 0.2s ease-in-out;
+}
+
+.lokasi {
+  margin: 30% 0;
 }
 
 .contact-item-icon:hover {
