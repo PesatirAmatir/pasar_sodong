@@ -107,6 +107,12 @@ a {
   font-size: 2rem;
 }
 
+.logo img {
+  width: 30%;
+  height: auto;
+  margin: -1.5rem 1% 0 1%;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
